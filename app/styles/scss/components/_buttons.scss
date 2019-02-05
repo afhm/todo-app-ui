@@ -1,0 +1,80 @@
+/* ---------------------------------- */
+/* Buttons component
+------------------------------------- */
+.btn {
+
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.2rem 3rem;
+        margin-bottom: 2rem;
+        // border-radius: 1rem;
+        transition: all .2s;
+        font-size: 1.3rem;
+        font-family: sans-serif;
+        font-weight: 400;
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-3px);
+        box-shadow: 0 .5rem 1rem rgba(#000, .2);
+    }
+
+    &--white {
+        background-color: #fff;
+        color: rgb(88, 88, 88);
+
+        &::after {
+            background-color: #fff
+        }
+    }
+
+    &--brown {
+        background-color: $primary-color;
+        color: #fff;
+
+        &::after {
+            background-color: $primary-color-light;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        // border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    
+}
+
+
+
